@@ -11,7 +11,7 @@ import datetime as dt
 def scrape_all():
    # Initiate headless driver for deployment
    browser = Browser("chrome", executable_path="chromedriver", headless=True)
-
+   
 news_title, news_paragraph = mars_news(browser)
 
 # Run all scraping functions and store results in dictionary
@@ -70,8 +70,8 @@ def mars_news(browser):
 def featured_image(browser):
 
     try:
-   # find the relative image url
-   img_url_rel = img_soup.select_one('figure.lede a img').get("src")
+           # find the relative image url
+        img_url_rel = img_soup.select_one('figure.lede a img').get("src")
 
     except AttributeError:
         return None
